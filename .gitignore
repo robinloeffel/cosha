@@ -1,0 +1,14 @@
+# folders
+node_modules
+
+# os
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# lib
+cosha.browser.js

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cosha.surge.sh/sitemap.txt

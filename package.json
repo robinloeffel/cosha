@@ -1,0 +1,23 @@
+{
+  "name": "cosha",
+  "version": "0.1.0",
+  "description": "Colorful shadows for your images",
+  "main": "cosha.js",
+  "author": "Robin Löffel",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "http-server": "^0.11.1",
+    "rollup": "^1.20.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1"
+  },
+  "scripts": {
+    "dist": "rollup -c",
+    "start": "rollup -c -w & http-server -g -s -o"
+  }
+}

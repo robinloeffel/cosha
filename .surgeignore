@@ -1,0 +1,5 @@
+*.config.js
+*.json
+*.lock
+browserslist
+cosha.js
