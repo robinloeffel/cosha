@@ -2,18 +2,28 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import copy from 'rollup-plugin-copy';
+
+const prod = process.env.prod === 'true';
+const copyConfig = {
+    targets: [{
+        src: 'dist/cosha.browser.*', dest: 'page'
+    }],
+    hook: 'writeBundle'
+};
 
 export default {
-  input: 'cosha.js',
+  input: 'src/cosha.js',
   output: {
-    file: 'cosha.browser.js',
+    file: 'dist/cosha.browser.js',
     format: 'iife',
     name: 'Cosha'
   },
   plugins: [
     resolve(),
     commonjs(),
-    babel(),
-    terser()
+    prod && babel(),
+    prod && terser(),
+    copy(copyConfig)
   ]
 };

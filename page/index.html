@@ -11,7 +11,7 @@
   <meta name="robots" content="index, follow">
   <title>cosha: Colorful shadows for your images</title>
   <link rel="stylesheet" href="cosha.css">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
   <link rel="canonical" href="https://cosha.surge.sh">
   <meta name="google-site-verification" content="aO8HEwTH32qJQB3hx2V-90u3JOROxOlKxhu2c5s53rM">
 </head>
@@ -20,15 +20,17 @@
   <header>
     <h1>cosha</h1>
     <p>Colorful shadows for your images</p>
+    <small>
+        <a href="https://github.com/rbnlffl/cosha">rbnlffl/cosha</a>
+    </small>
   </header>
   <section>
     <pre>
-      <span>// terminal </span>
-      <span>npm i cosha</span>
-      <span>// project</span>
-      <span>import Cosha from 'cosha';</span>
-      <span>const cosha = new Cosha();</span>
-      <span>cosha.init();</span>
+      <span>🔥 npm i cosha</span>
+      <span>&nbsp;</span>
+      <span><span style="color: goldenrod;">import</span> <span style="color: skyblue;">Cosha</span> <span style="color: goldenrod;">from</span> <span style="color: deepskyblue;">'cosha'</span>;</span>
+      <span><span style="color: goldenrod;">const</span> <span style="color: springgreen;">cosha</span> = <span style="color: goldenrod;">new</span> <span style="color: skyblue;">Cosha()</span>;</span>
+      <span><span style="color: springgreen;">cosha</span>.<span style="color: lightsalmon;">init()</span>;</span>
     </pre>
   </section>
   <section>
@@ -40,9 +42,6 @@
   <section>
     <img src="image-3.jpeg" class="dark-shadow">
   </section>
-  <footer>
-    <small><a href="https://robinloeffel.ch">Robin Löffel</a></small>
-  </footer>
 
   <script src="cosha.browser.js"></script>
   <script>
@@ -58,6 +57,7 @@
 
     const dark = new Cosha({
       className: 'dark-shadow',
+      blur: '10px',
       brightness: '75%'
     })
 
