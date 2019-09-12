@@ -2,11 +2,13 @@ export default class Cosha {
   constructor({
     className = 'cosha',
     blur = '5px',
-    brightness = '100%'
+    brightness = '100%',
+    saturate = '100%'
   } = {}) {
     this.className = className;
     this.blur = blur;
     this.brightness = brightness;
+    this.saturate = saturate;
   }
 
   init() {
@@ -24,7 +26,7 @@ export default class Cosha {
         }
 
         .${this.className}__clone {
-          filter: blur(${this.blur}) brightness(${this.brightness});
+          filter: blur(${this.blur}) brightness(${this.brightness}) saturate(${this.saturate});
           position: absolute;
           z-index: -1;
         }

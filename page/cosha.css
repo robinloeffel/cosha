@@ -51,7 +51,7 @@ h1 {
     color: #fff;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    animation: hue 10s infinite alternate linear;
+    animation: hue 5s infinite alternate linear;
 }
 
 header small {
