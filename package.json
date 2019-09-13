@@ -1,10 +1,10 @@
 {
   "name": "cosha",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Colorful shadows for your images",
   "entry": "src/cosha.js",
-  "module": "dist/cosha.module.js",
-  "browser": "dist/cosha.browser.js",
+  "main": "dist/cosha.module.js",
+  "unpkg": "dist/cosha.browser.js",
   "author": "Robin Löffel",
   "license": "MIT",
   "devDependencies": {
