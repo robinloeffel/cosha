@@ -47,11 +47,16 @@ h1 {
   line-height: 1.1;
   font-size: 3rem;
   margin: auto auto 30px;
-  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
   color: #fff;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  animation: hue 5s infinite alternate linear;
+}
+
+@supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {
+  h1 {
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: hue 5s infinite alternate linear;
+  }
 }
 
 header small {

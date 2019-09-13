@@ -6,12 +6,8 @@
   "author": "Robin Löffel",
   "license": "MIT",
   "dependencies": {
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
     "http-server": "^0.11.1",
     "rollup": "^1.21.2",
-    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -21,6 +17,6 @@
     "dist": "yarn del && rollup -c --environment prod && surge page",
     "dev": "yarn del && rollup -c -w & http-server page -g -s -o",
     "prod": "yarn del && rollup -c -w --environment prod & http-server page -g -s -o",
-    "del": "rm {page,dist}/cosha.browser.*"
+    "del": "rm -f {page,dist}/cosha.browser.*"
   }
 }

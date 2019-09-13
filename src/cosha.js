@@ -9,11 +9,11 @@ export default class Cosha {
     this.blur = blur;
     this.brightness = brightness;
     this.saturate = saturate;
-    this.nodes = [];
+    this.nodes;
   }
 
   init() {
-    this.nodes = [...document.getElementsByClassName(this.className)];
+    this.nodes = document.getElementsByClassName(this.className);
 
     this.addStyle();
     this.addClone();
@@ -39,7 +39,8 @@ export default class Cosha {
   }
 
   addClone() {
-    this.nodes.forEach(image => {
+    for (let i = 0; i < this.nodes.length; i++) {
+      const image = this.nodes[i];
       const clone = image.cloneNode();
       const wrapper = document.createElement('div');
 
@@ -50,6 +51,6 @@ export default class Cosha {
       image.parentNode.insertBefore(wrapper, image);
       wrapper.appendChild(image);
       wrapper.appendChild(clone);
-    });
+    }
   }
 };
