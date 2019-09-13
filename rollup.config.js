@@ -16,7 +16,7 @@ const copyConfig = {
 export default [{
   input: pkgjson.entry,
   output: {
-    file: pkgjson.browser,
+    file: pkgjson.unpkg,
     format: 'iife',
     name: 'Cosha'
   },
@@ -29,7 +29,7 @@ export default [{
 }, {
   input: pkgjson.entry,
   output: {
-    file: pkgjson.module,
+    file: pkgjson.main,
     format: 'esm'
   },
   plugins: [
