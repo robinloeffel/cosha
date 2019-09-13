@@ -2,7 +2,9 @@
   "name": "cosha",
   "version": "0.1.0",
   "description": "Colorful shadows for your images",
-  "main": "src/cosha.js",
+  "entry": "src/cosha.js",
+  "module": "dist/cosha.module.js",
+  "browser": "dist/cosha.browser.js",
   "author": "Robin Löffel",
   "license": "MIT",
   "dependencies": {
@@ -17,6 +19,7 @@
     "dist": "yarn del && rollup -c --environment prod && surge page",
     "dev": "yarn del && rollup -c -w & http-server page -g -s -o",
     "prod": "yarn del && rollup -c -w --environment prod & http-server page -g -s -o",
-    "del": "rm -f {page,dist}/cosha.browser.*"
+    "del": "rm -f {page,dist}/cosha.{browser,module}.*",
+    "pblsh": "yarn dist && yarn publish"
   }
 }
