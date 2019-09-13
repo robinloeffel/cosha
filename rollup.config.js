@@ -6,10 +6,11 @@ import copy from 'rollup-plugin-copy';
 
 const prod = process.env.prod === 'true';
 const copyConfig = {
-    targets: [{
-        src: 'dist/cosha.browser.*', dest: 'page'
-    }],
-    hook: 'writeBundle'
+  targets: [{
+    src: 'dist/cosha.browser.*',
+    dest: 'page'
+  }],
+  hook: 'writeBundle'
 };
 
 export default {

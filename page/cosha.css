@@ -1,109 +1,109 @@
 *,
 *::after,
 *::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: "system-ui", sans-serif;
-    font-size: 125%;
-    line-height: 1.6;
-    color: #333;
+  font-family: "system-ui", sans-serif;
+  font-size: 125%;
+  line-height: 1.6;
+  color: #333;
 }
 
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15vh 0;
 }
 
 header {
-    background-color: #333;
-    padding: 125px 10px;
-    color: #fff;
-    text-align: center;
+  background-color: #333;
+  padding: 125px 10px;
+  color: #fff;
+  text-align: center;
 }
 
 h1,
 p {
-    max-width: 640px;
+  max-width: 640px;
 }
 
 header p,
 header small {
-    margin: auto;
-    opacity: 0.8;
+  margin: auto;
+  opacity: 0.8;
 }
 
 h1 {
-    line-height: 1.1;
-    font-size: 3rem;
-    margin: auto auto 30px;
-    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
-    color: #fff;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    animation: hue 5s infinite alternate linear;
+  line-height: 1.1;
+  font-size: 3rem;
+  margin: auto auto 30px;
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: hue 5s infinite alternate linear;
 }
 
 header small {
-    display: block;
-    margin-top: 20px;
+  display: block;
+  margin-top: 20px;
 }
 
 header a {
-    color: inherit;
-    opacity: inherit;
+  color: inherit;
+  opacity: inherit;
 }
 
 pre {
-    font-family: inherit;
-    margin: 0;
-    width: 80%;
-    max-width: 640px;
-    white-space: normal;
-    padding: 30px 40px;
-    border-radius: 10px;
-    background-color: #333;
-    color: white;
+  font-family: inherit;
+  margin: 0;
+  width: 80%;
+  max-width: 640px;
+  white-space: normal;
+  padding: 30px 40px;
+  border-radius: 10px;
+  background-color: #333;
+  color: white;
 }
 
 pre span {
-    display: block;
+  display: block;
 }
 
-pre span + span {
-    margin-top: 10px;
+pre span+span {
+  margin-top: 10px;
 }
 
-pre span > span {
-    display: inline;
+pre span>span {
+  display: inline;
 }
 
 @keyframes hue {
-    from {
-        filter: hue-rotate(0deg);
-    }
+  from {
+    filter: hue-rotate(0deg);
+  }
 
-    to {
-        filter: hue-rotate(180deg);
-    }
+  to {
+    filter: hue-rotate(180deg);
+  }
 }
 
 [class*="__wrapper"] {
-    position: relative;
-    width: 85%;
-    max-width: 700px;
+  position: relative;
+  width: 85%;
+  max-width: 700px;
 }
 
 [class*="__wrapper"] img {
-    width: 100%;
+  width: 100%;
 }

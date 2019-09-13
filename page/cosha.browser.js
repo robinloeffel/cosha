@@ -12,9 +12,12 @@ var Cosha = (function () {
       this.blur = blur;
       this.brightness = brightness;
       this.saturate = saturate;
+      this.nodes = [];
     }
 
     init() {
+      this.nodes = [...document.getElementsByClassName(this.className)];
+
       this.addStyle();
       this.addClone();
     }
@@ -38,9 +41,7 @@ var Cosha = (function () {
     }
 
     addClone() {
-      this.nodes = document.getElementsByClassName(this.className);
-
-      [...this.nodes].forEach(image => {
+      this.nodes.forEach(image => {
         const clone = image.cloneNode();
         const wrapper = document.createElement('div');
 
@@ -48,9 +49,11 @@ var Cosha = (function () {
         clone.classList.add(this.className + '__clone');
         clone.classList.remove(this.className);
 
-        image.parentNode.insertBefore(wrapper, image);
-        wrapper.appendChild(image);
-        wrapper.appendChild(clone);
+        requestAnimationFrame(() => {
+          image.parentNode.insertBefore(wrapper, image);
+          wrapper.appendChild(image);
+          wrapper.appendChild(clone);
+        });
       });
     }
   }
