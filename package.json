@@ -1,6 +1,6 @@
 {
   "name": "cosha",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Colorful shadows for your images",
   "entry": "src/cosha.js",
   "module": "dist/cosha.module.js",
@@ -21,5 +21,8 @@
     "prod": "yarn del && rollup -c -w --environment prod & http-server page -g -s -o",
     "del": "rm -f {page,dist}/cosha.{browser,module}.*",
     "pblsh": "yarn dist && yarn publish"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
