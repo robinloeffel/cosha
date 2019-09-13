@@ -1,6 +1,6 @@
 {
   "name": "cosha",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Colorful shadows for your images",
   "entry": "src/cosha.js",
   "main": "dist/cosha.module.js",
