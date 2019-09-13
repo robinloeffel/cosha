@@ -32,6 +32,7 @@ export default class Cosha {
           filter: blur(${this.blur}) brightness(${this.brightness}) saturate(${this.saturate});
           position: absolute;
           z-index: -1;
+          transform: translateZ(0);
         }
       </style>
     `);
@@ -46,11 +47,9 @@ export default class Cosha {
       clone.classList.add(this.className + '__clone');
       clone.classList.remove(this.className);
 
-      requestAnimationFrame(() => {
-        image.parentNode.insertBefore(wrapper, image);
-        wrapper.appendChild(image);
-        wrapper.appendChild(clone);
-      });
+      image.parentNode.insertBefore(wrapper, image);
+      wrapper.appendChild(image);
+      wrapper.appendChild(clone);
     });
   }
-}
+};

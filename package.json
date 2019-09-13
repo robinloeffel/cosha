@@ -18,7 +18,7 @@
     "rollup-plugin-terser": "^5.1.2"
   },
   "scripts": {
-    "dist": "yarn del && rollup -c --environment prod",
+    "dist": "yarn del && rollup -c --environment prod && surge page",
     "dev": "yarn del && rollup -c -w & http-server page -g -s -o",
     "prod": "yarn del && rollup -c -w --environment prod & http-server page -g -s -o",
     "del": "rm {page,dist}/cosha.browser.*"
