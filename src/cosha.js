@@ -3,12 +3,16 @@ export default class Cosha {
     className = 'cosha',
     blur = '5px',
     brightness = '100%',
-    saturate = '100%'
+    saturate = '100%',
+    offsetX = '0px',
+    offsetY = '0px'
   } = {}) {
     this.className = className;
     this.blur = blur;
     this.brightness = brightness;
     this.saturate = saturate;
+    this.offsetX = offsetX;
+    this.offsetY = offsetY
     this.nodes;
   }
 
@@ -32,7 +36,7 @@ export default class Cosha {
           filter: blur(${this.blur}) brightness(${this.brightness}) saturate(${this.saturate});
           position: absolute;
           z-index: -1;
-          transform: translateZ(0);
+          transform: translate3d(${this.offsetX}, ${this.offsetY}, 0);
         }
       </style>
     `);

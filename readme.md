@@ -14,16 +14,20 @@ const cosha = new Cosha({
     className: 'colorful-shadow',
     blur: '10px',
     brightness: '125%',
-    saturation: '110%'
+    saturation: '110%',
+    offsetX: '2px',
+    offsetY: '6px'
 });
 
 cosha.init();
 ```
 
-Every part of the config is optional. You can even just initialize it by writing `const shadows = new Cosha();`. The default values are:
+Everything of the config is optional. You can also initialize it by just writing `const shadows = new Cosha();`. The default values are:
 * `className: 'cosha'`
 * `blur: '5px'`
 * `brightness: '100%'`
 * `saturation: '100%'`
+* `offsetX: '0px'`
+* `offsetY: '0px'`
 
 It runs on every browser except Internet Explorer. This is because of missing support for CSS `filter` properties.
