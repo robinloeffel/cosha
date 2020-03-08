@@ -2,6 +2,8 @@
     "name": "cosha",
     "version": "0.3.0",
     "description": "Colorful shadows for your images",
+    "homepage": "npm.robinloeffel.ch/cosha",
+    "repository": "robinloeffel/cosha",
     "main": "dist/cosha.cjs.js",
     "module": "dist/cosha.esm.js",
     "unpkg": "dist/cosha.iife.js",
