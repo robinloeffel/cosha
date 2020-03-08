@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="cosha is a super-small npm package to allow you to add colorful shadows behind the images of your website.">
+    <meta name="keywords" content="npm, yarn, color, shadow, robin, löffel, javascript, package">
+    <meta name="author" content="Robin Löffel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <title>cosha: Colorful shadows for your images</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        html {
+            font-family: "Inter", sans-serif;
+            font-size: 120%;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            padding: 125px 10px;
+            color: #eee;
+            text-align: center;
+        }
+
+        header * {
+            margin: auto;
+            color: inherit;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15vh auto;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        footer {
+            text-align: center;
+            margin: 50px 0 75px;
+            font-size: 90%;
+        }
+
+        h1,
+        p {
+            max-width: 640px;
+        }
+
+        h1 {
+            line-height: 1.1;
+            font-size: 300%;
+            margin-bottom: 30px;
+            color: #eee;
+        }
+
+        p + p {
+            margin-top: 20px;
+        }
+
+        @supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {
+            h1 {
+                background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                animation: hue 5s infinite alternate linear;
+            }
+        }
+
+        pre {
+            font-family: inherit;
+            margin: 0;
+            width: 80%;
+            max-width: 640px;
+            white-space: normal;
+            padding: 30px 40px;
+            border-radius: 10px;
+            background-color: #333;
+            color: #eee;
+        }
+
+        pre span {
+            display: block;
+        }
+
+        pre span + span {
+            margin-top: 10px;
+        }
+
+        pre span > span {
+            display: inline;
+        }
+
+        @keyframes hue {
+            from {
+                filter: hue-rotate(0deg);
+            }
+
+            to {
+                filter: hue-rotate(180deg);
+            }
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon.png">
+</head>
+
+<body>
+    <header>
+        <h1>cosha</h1>
+        <p>Colorful shadows for your images. 🎨</p>
+        <p>
+            <a href="https://github.com/robinloeffel/cosha">robinloeffel/cosha</a>
+        </p>
+    </header>
+    <main>
+        <section>
+            <pre>
+          <span>🔥 yarn add cosha</span>
+          <span>&nbsp;</span>
+          <span><span style="color: goldenrod;">import</span> <span style="color: skyblue;">cosha</span> <span style="color: goldenrod;">from</span> <span style="color: deepskyblue;">'cosha'</span>;</span>
+          <span><span style="color: skyblue;">cosha({ <span style="color: lightsalmon;">className</span></span>: <span style="color: springgreen;">'cool-shadow'</span> <span style="color: skyblue;">})</span>;</span>
+        </pre>
+        </section>
+        <section>
+            <img src="https://images.unsplash.com/photo-1583272630857-5a0fd42e611e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" class="small-shadow" alt="">
+        </section>
+        <section>
+            <img src="https://images.unsplash.com/photo-1557939403-1760a0e47505?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" class="large-shadow" alt="">
+        </section>
+        <section>
+            <img src="https://images.unsplash.com/photo-1561471026-0bbb77535d25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" class="dark-shadow" alt="">
+        </section>
+    </main>
+    <footer>
+        <a href="https://robinloeffel.ch">robinloeffel.ch</a>
+    </footer>
+
+    <script src="cosha.iife.js"></script>
+    <script>
+        cosha({
+            className: 'small-shadow',
+            blur: '5px'
+        });
+
+        cosha({
+            className: 'large-shadow',
+            blur: '15px'
+        });
+
+        cosha({
+            className: 'dark-shadow',
+            blur: '10px',
+            brightness: '75%'
+        });
+    </script>
+</body>
+
+</html>

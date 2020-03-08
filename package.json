@@ -1,28 +1,42 @@
 {
-  "name": "cosha",
-  "version": "0.2.0",
-  "description": "Colorful shadows for your images",
-  "entry": "src/cosha.js",
-  "main": "dist/cosha.module.js",
-  "unpkg": "dist/cosha.browser.js",
-  "author": "Robin Löffel",
-  "license": "MIT",
-  "devDependencies": {
-    "http-server": "^0.11.1",
-    "rollup": "^1.21.2",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-copy": "^3.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^5.1.2"
-  },
-  "scripts": {
-    "dist": "yarn del && rollup -c --environment prod && surge page",
-    "dev": "yarn del && rollup -c -w & http-server page -g -s -o",
-    "prod": "yarn del && rollup -c -w --environment prod & http-server page -g -s -o",
-    "del": "rm -f {page,dist}/cosha.{browser,module}.*",
-    "pblsh": "yarn dist && yarn publish"
-  },
-  "files": [
-    "dist"
-  ]
+    "name": "cosha",
+    "version": "0.3.0",
+    "description": "Colorful shadows for your images",
+    "main": "dist/cosha.cjs.js",
+    "module": "dist/cosha.esm.js",
+    "unpkg": "dist/cosha.iife.js",
+    "author": {
+        "name": "Robin Löffel",
+        "email": "hi@robinloeffel.ch",
+        "url": "robinloeffel.ch"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=10"
+    },
+    "devDependencies": {
+        "@rollup/plugin-buble": "^0.21.1",
+        "@rollup/plugin-commonjs": "^11.0.2",
+        "@rollup/plugin-node-resolve": "^7.1.1",
+        "eslint": "^6.8.0",
+        "eslint-config-sweet": "^0.2.2",
+        "rollup": "^2.0.2",
+        "rollup-plugin-eslint": "^7.0.0",
+        "rollup-plugin-terser": "^5.2.0",
+        "serve": "^11.3.0"
+    },
+    "files": [
+        "dist/cosha*"
+    ],
+    "scripts": {
+        "clean": "rm -rf dist/cosha.*",
+        "serve": "serve dist",
+        "build": "rollup -c",
+        "watch": "yarn build -w",
+        "start": "yarn clean && yarn watch & yarn serve",
+        "release": "yarn build && yarn publish"
+    },
+    "eslintConfig": {
+        "extends": "sweet"
+    }
 }

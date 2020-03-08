@@ -1,12 +1,11 @@
 # folders
 node_modules
-dist
 
-# os
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# macos
 .DS_Store
 .AppleDouble
 .LSOverride
 ._*
+
+# dist files
+dist/cosha*
