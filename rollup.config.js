@@ -9,7 +9,8 @@ export default [{
     plugins: [
         eslint(),
         resolve(),
-        commonjs()
+        commonjs(),
+        buble()
     ].filter(p => p),
     output: {
         format: 'esm',
@@ -24,7 +25,6 @@ export default [{
     ].filter(p => p),
     output: {
         format: 'cjs',
-        sourcemap: true,
         file: 'dist/cosha.cjs.js'
     }
 }, {
@@ -39,7 +39,6 @@ export default [{
     ],
     output: {
         format: 'iife',
-        sourcemap: true,
         name: 'cosha',
         file: 'dist/cosha.iife.js'
     }

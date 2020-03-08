@@ -31,8 +31,8 @@ Everything of the config is optional. You can also initialize it by just calling
 
 -   `className: 'cosha'`
 -   `blur: '5px'`
--   `brightness: '100%'`
--   `saturation: '100%'`
+-   `brightness: 1`
+-   `saturation: 1`
 -   `x: 0`
 -   `y: 0`
 
