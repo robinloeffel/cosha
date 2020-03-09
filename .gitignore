@@ -8,4 +8,5 @@ node_modules
 ._*
 
 # dist files
-dist/cosha*
+dist/cosha.*
+!dist/cosha.iife.js

@@ -12,6 +12,10 @@ const cosha = ({
         HTMLCollection.prototype.forEach = Array.prototype.forEach;
     }
 
+    if (!('filter' in document.documentElement.style)) {
+        return;
+    }
+
     document.head.insertAdjacentHTML('beforeend', `
         <style>
             .${className}-wrapper {

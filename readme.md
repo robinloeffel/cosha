@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="sample.jpg" width="500">
+    <img src="sample.jpg" width="450">
 </p>
 
 # cosha
@@ -10,13 +10,21 @@
 
 [cosha](https://npm.robinloeffel.ch/cosha) lets you add **co**lorful **sha**dows to your images. Try it out and look for yourself—the bundle is only less than 1kb small and it couldn't be easier to set up!
 
+## How
+
 ```sh
 yarn add cosha
 ```
 
+```html
+<img src="my-dope-pic.jpg" alt="mmmhm" class="colorful-shadow"/>
+```
+
 ```js
 import cosha from 'cosha';
+```
 
+```js
 cosha({
     className: 'colorful-shadow',
     blur: '10px',
@@ -27,13 +35,31 @@ cosha({
 });
 ```
 
-Everything of the config is optional. You can also initialize it by just calling `cosha()`. The default values are:
+Alternatively, if that module-bundler stuff isn't for you, you can get it directly from [`https://unpkg.com/cosha`](https://unpkg.com/cosha).
 
--   `className: 'cosha'`
--   `blur: '5px'`
--   `brightness: 1`
--   `saturation: 1`
--   `x: 0`
--   `y: 0`
+```html
+<script src="https://unpkg.com/cosha"></script>
+```
 
-It runs on every browser except Internet Explorer. This is because of missing support for CSS `filter` properties.
+## Config
+
+Everything in the config is optional. You can also use it by just calling `cosha()`. The default values are:
+
+```js
+cosha({
+    className: 'cosha',
+    blur: '5px',
+    brightness: 1,
+    saturation: 1,
+    x: 0,
+    y: 0
+});
+```
+
+## Gotcha
+
+It runs in every browser except Internet Explorer. This is because of missing support for [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) properties. In case cosha detects it's running in a browser that doesn't feature CSS filters, it simply doesn't do anything.
+
+## License
+
+MIT

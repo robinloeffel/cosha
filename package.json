@@ -1,6 +1,6 @@
 {
     "name": "cosha",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "Colorful shadows for your images",
     "homepage": "npm.robinloeffel.ch/cosha",
     "repository": "robinloeffel/cosha",
@@ -28,7 +28,15 @@
         "serve": "^11.3.0"
     },
     "files": [
-        "dist/cosha*"
+        "dist/cosha.*"
+    ],
+    "keywords": [
+        "image",
+        "shadow",
+        "colors",
+        "html",
+        "css filters",
+        "dom"
     ],
     "scripts": {
         "clean": "rm -rf dist/cosha.*",
