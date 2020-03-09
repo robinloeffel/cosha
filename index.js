@@ -8,24 +8,24 @@ const cosha = ({
 } = {}) => {
     if (NodeList.prototype.forEach) {
         const images = document.querySelectorAll(`.${className}`);
+        const styles = document.createElement('style');
 
-        document.head.insertAdjacentHTML('beforeend', `
-            <style>
-                .${className}-wrapper {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
+        styles.textContent = `
+            .${className}-wrapper {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-                .${className}-clone {
-                    filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
-                    position: absolute;
-                    z-index: -1;
-                    transform: translate3d(${x}, ${y}, 0);
-                }
-            </style>
-        `);
+            .${className}-clone {
+                filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
+                position: absolute;
+                z-index: -1;
+                transform: translate3d(${x}, ${y}, 0);
+            }
+        `;
+        document.head.appendChild(styles);
 
         images.forEach(image => {
             const clone = image.cloneNode();
