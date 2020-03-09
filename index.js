@@ -6,7 +6,7 @@ const cosha = ({
     y = 0,
     x = 0
 } = {}) => {
-    if ('filter' in document.documentElement.style) {
+    if (NodeList.prototype.forEach) {
         const images = document.querySelectorAll(`.${className}`);
 
         document.head.insertAdjacentHTML('beforeend', `

@@ -58,7 +58,7 @@ cosha({
 
 ## Gotcha
 
-It runs in every browser except Internet Explorer. This is because of missing support for [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) properties. In case cosha detects it's running in a browser that doesn't feature CSS filters, it simply doesn't do anything.
+It runs in every browser except Internet Explorer. This is because of missing support for [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) properties. In case cosha detects it's running in a browser that doesn't have [`NodeList.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Browser_Compatibility) available, which at this point is only IE <= 11, it simply doesn't do anything.
 
 ## License
 
