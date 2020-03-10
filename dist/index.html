@@ -128,13 +128,16 @@
             </pre>
         </section>
         <section>
-            <img src="https://images.unsplash.com/photo-1583272630857-5a0fd42e611e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" class="small-shadow" alt="">
+            <picture class="cosha some-demo-class">
+                <source srcset="https://images.unsplash.com/photo-1583542225715-473a32c9b0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60 900w, https://images.unsplash.com/photo-1583542225715-473a32c9b0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60 600w" type="image/jpg">
+                <img src="https://images.unsplash.com/photo-1583542225715-473a32c9b0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="">
+            </picture>
         </section>
         <section>
             <img src="https://images.unsplash.com/photo-1557939403-1760a0e47505?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" class="large-shadow" alt="">
         </section>
         <section>
-            <img src="https://images.unsplash.com/photo-1561471026-0bbb77535d25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" class="dark-shadow" alt="">
+            <img src="https://images.unsplash.com/photo-1583272630857-5a0fd42e611e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" class="light-shadow" alt="">
         </section>
     </main>
     <footer>
@@ -143,20 +146,17 @@
 
     <script src="cosha.iife.js"></script>
     <script>
-        cosha({
-            className: 'small-shadow',
-            blur: '5px'
-        });
+        cosha();
 
         cosha({
             className: 'large-shadow',
-            blur: '15px'
+            blur: '15px',
+            y: '5px'
         });
 
         cosha({
-            className: 'dark-shadow',
-            blur: '10px',
-            brightness: '75%'
+            className: 'light-shadow',
+            brightness: 1.1
         });
     </script>
 </body>

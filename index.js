@@ -28,7 +28,7 @@ const cosha = ({
         document.head.appendChild(styles);
 
         images.forEach(image => {
-            const clone = image.cloneNode();
+            const clone = image.cloneNode(true);
             const wrapper = document.createElement('div');
 
             wrapper.classList.add(`${className}-wrapper`);

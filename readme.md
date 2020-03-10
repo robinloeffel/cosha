@@ -17,7 +17,15 @@ yarn add cosha
 ```
 
 ```html
+<!-- regular old img tag -->
 <img src="my-dope-pic.jpg" alt="mmmhm" class="colorful-shadow"/>
+
+<!-- shiny new picture tag -->
+<picture class="colorful-shadow">
+    <source srcset="palm-tree-1200.jpg 1200w, palm-tree-800.jpg 800w, palm-tree-400.jpg 400w" type="image/jpeg">
+    <source srcset="palm-tree-1200.webp 1200w, palm-tree-800.webp 800w, palm-tree-400.webp 400w" type="image/webp">
+    <img src="palm-tree-400.jpg" alt="nice vibes"/>
+</picture>
 ```
 
 ```js
