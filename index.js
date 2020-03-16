@@ -28,12 +28,14 @@ const cosha = ({
         document.head.appendChild(styles);
 
         images.forEach(image => {
-            const clone = image.cloneNode(true);
+            const isImg = image.localName === 'img';
+            const clone = image.cloneNode(!isImg);
             const wrapper = document.createElement('div');
 
             wrapper.classList.add(`${className}-wrapper`);
             clone.classList.add(`${className}-clone`);
             clone.classList.remove(className);
+            isImg ? clone.alt = '' : clone.querySelector('img').alt = '';
 
             image.parentNode.insertBefore(wrapper, image);
             wrapper.appendChild(image);
