@@ -13,7 +13,7 @@ const cosha = ({
         styles.textContent = `
             .${className}-wrapper {
                 position: relative;
-                display: flex;
+                display: inline-flex;
                 align-items: center;
                 justify-content: center;
             }
