@@ -21,6 +21,7 @@ const cosha = ({
             .${className}-clone {
                 filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
                 position: absolute;
+                width: 100%;
                 z-index: -1;
                 transform: translate3d(${x}, ${y}, 0);
             }
