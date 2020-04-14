@@ -36,7 +36,12 @@ const cosha = ({
             wrapper.classList.add(`${className}-wrapper`);
             clone.classList.add(`${className}-clone`);
             clone.classList.remove(className);
-            isImg ? clone.alt = '' : clone.querySelector('img').alt = '';
+
+            if (isImg) {
+                clone.alt = '';
+            } else {
+                clone.querySelector('img').alt = '';
+            }
 
             image.parentNode.insertBefore(wrapper, image);
             wrapper.appendChild(image);

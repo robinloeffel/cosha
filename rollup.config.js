@@ -11,7 +11,7 @@ export default [{
         resolve(),
         commonjs(),
         buble()
-    ].filter(p => p),
+    ],
     output: {
         format: 'esm',
         file: 'dist/cosha.esm.js'
@@ -22,7 +22,7 @@ export default [{
         resolve(),
         commonjs(),
         buble()
-    ].filter(p => p),
+    ],
     output: {
         format: 'cjs',
         file: 'dist/cosha.cjs.js'

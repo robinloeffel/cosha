@@ -17,10 +17,10 @@ yarn add cosha
 ```
 
 ```html
-<!-- regular old img tag -->
-<img src="my-dope-pic.jpg" alt="mmmhm" class="colorful-shadow"/>
+<!-- on an img tag -->
+<img src="palm-tree.jpg" alt="nice vibes" class="colorful-shadow"/>
 
-<!-- shiny new picture tag -->
+<!-- on a picture tag -->
 <picture class="colorful-shadow">
     <source srcset="palm-tree-1200.jpg 1200w, palm-tree-800.jpg 800w, palm-tree-400.jpg 400w" type="image/jpeg">
     <source srcset="palm-tree-1200.webp 1200w, palm-tree-800.webp 800w, palm-tree-400.webp 400w" type="image/webp">
@@ -30,9 +30,7 @@ yarn add cosha
 
 ```js
 import cosha from 'cosha';
-```
 
-```js
 cosha({
     className: 'colorful-shadow',
     blur: '10px',
@@ -47,6 +45,9 @@ Alternatively, if that module-bundler stuff isn't for you, you can get it direct
 
 ```html
 <script src="https://unpkg.com/cosha"></script>
+<script>
+    cosha({ className: 'colorful-shadow'});
+</script>
 ```
 
 ## Config
