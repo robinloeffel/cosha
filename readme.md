@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="sample.jpg" width="450">
+  <img src="sample.jpg" width="450">
 </p>
 
 # cosha
@@ -22,9 +22,9 @@ yarn add cosha
 
 <!-- on a picture tag -->
 <picture class="colorful-shadow">
-	<source srcset="palm-tree-1200.jpg 1200w, palm-tree-800.jpg 800w, palm-tree-400.jpg 400w" type="image/jpeg">
-	<source srcset="palm-tree-1200.webp 1200w, palm-tree-800.webp 800w, palm-tree-400.webp 400w" type="image/webp">
-	<img src="palm-tree-400.jpg" alt="nice vibes"/>
+  <source srcset="palm-tree-1200.jpg 1200w, palm-tree-800.jpg 800w, palm-tree-400.jpg 400w" type="image/jpeg">
+  <source srcset="palm-tree-1200.webp 1200w, palm-tree-800.webp 800w, palm-tree-400.webp 400w" type="image/webp">
+  <img src="palm-tree-400.jpg" alt="nice vibes"/>
 </picture>
 ```
 
@@ -32,12 +32,12 @@ yarn add cosha
 import cosha from 'cosha';
 
 cosha({
-	className: 'colorful-shadow',
-	blur: '10px',
-	brightness: '125%',
-	saturation: '110%',
-	x: '2px',
-	y: '6px'
+  className: 'colorful-shadow',
+  blur: '10px',
+  brightness: '125%',
+  saturation: '110%',
+  x: '2px',
+  y: '6px'
 });
 ```
 
@@ -46,7 +46,7 @@ Alternatively, if that module-bundler stuff isn't for you, you can get it direct
 ```html
 <script src="https://unpkg.com/cosha"></script>
 <script>
-	cosha({ className: 'colorful-shadow' });
+  cosha({ className: 'colorful-shadow' });
 </script>
 ```
 
@@ -56,12 +56,12 @@ Everything in the config is optional. You can also use it by just calling `cosha
 
 ```js
 cosha({
-	className: 'cosha',
-	blur: '5px',
-	brightness: 1,
-	saturation: 1,
-	x: 0,
-	y: 0
+  className: 'cosha',
+  blur: '5px',
+  brightness: 1,
+  saturation: 1,
+  x: 0,
+  y: 0
 });
 ```
 

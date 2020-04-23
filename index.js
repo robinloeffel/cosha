@@ -1,53 +1,53 @@
 const cosha = ({
-	className = 'cosha',
-	blur = '5px',
-	brightness = 1,
-	saturation = 1,
-	y = 0,
-	x = 0
+  className = 'cosha',
+  blur = '5px',
+  brightness = 1,
+  saturation = 1,
+  y = 0,
+  x = 0
 } = {}) => {
-	if (NodeList.prototype.forEach) {
-		const images = document.querySelectorAll(`.${className}`);
-		const styles = document.createElement('style');
+  if (NodeList.prototype.forEach) {
+    const images = document.querySelectorAll(`.${className}`);
+    const styles = document.createElement('style');
 
-		styles.textContent = `
-			.${className}-wrapper {
-				position: relative;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-			}
+    styles.textContent = `
+      .${className}-wrapper {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-			.${className}-clone {
-				filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
-				position: absolute;
-				width: 100%;
-				z-index: -1;
-				transform: translate3d(${x}, ${y}, 0);
-			}
-		`;
-		document.head.append(styles);
+      .${className}-clone {
+        filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+        transform: translate3d(${x}, ${y}, 0);
+      }
+    `;
+    document.head.append(styles);
 
-		images.forEach(image => {
-			const isImg = image.localName === 'img';
-			const clone = image.cloneNode(!isImg);
-			const wrapper = document.createElement('div');
+    images.forEach(image => {
+      const isImg = image.localName === 'img';
+      const clone = image.cloneNode(!isImg);
+      const wrapper = document.createElement('div');
 
-			wrapper.classList.add(`${className}-wrapper`);
-			clone.classList.add(`${className}-clone`);
-			clone.classList.remove(className);
+      wrapper.classList.add(`${className}-wrapper`);
+      clone.classList.add(`${className}-clone`);
+      clone.classList.remove(className);
 
-			if (isImg) {
-				clone.alt = '';
-			} else {
-				clone.querySelector('img').alt = '';
-			}
+      if (isImg) {
+        clone.alt = '';
+      } else {
+        clone.querySelector('img').alt = '';
+      }
 
-			image.parentNode.insertBefore(wrapper, image);
-			wrapper.append(image);
-			wrapper.append(clone);
-		});
-	}
+      image.parentNode.insertBefore(wrapper, image);
+      wrapper.append(image);
+      wrapper.append(clone);
+    });
+  }
 };
 
 export default cosha;
