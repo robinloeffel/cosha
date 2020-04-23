@@ -7,7 +7,3 @@ dist
 .AppleDouble
 .LSOverride
 ._*
-
-# dist files
-dist/cosha.*
-!dist/cosha.iife.js

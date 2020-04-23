@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="sample.jpg" width="450">
+	<img src="sample.jpg" width="450">
 </p>
 
 # cosha
@@ -8,7 +8,7 @@
 
 > Colorful shadows for your images. 🎨
 
-[cosha](https://npm.robinloeffel.ch/cosha) lets you add **co**lorful **sha**dows to your images. Try it out and look for yourself—the bundle is only less than 1kb small and it couldn't be easier to set up!
+[cosha](https://npm.robinloeffel.ch/cosha) lets you add **co**lorful **sha**dows to your images. Try it out and look for yourself—the bundle is less than 1kb small and it really couldn't be easier to set up!
 
 ## How
 
@@ -22,9 +22,9 @@ yarn add cosha
 
 <!-- on a picture tag -->
 <picture class="colorful-shadow">
-    <source srcset="palm-tree-1200.jpg 1200w, palm-tree-800.jpg 800w, palm-tree-400.jpg 400w" type="image/jpeg">
-    <source srcset="palm-tree-1200.webp 1200w, palm-tree-800.webp 800w, palm-tree-400.webp 400w" type="image/webp">
-    <img src="palm-tree-400.jpg" alt="nice vibes"/>
+	<source srcset="palm-tree-1200.jpg 1200w, palm-tree-800.jpg 800w, palm-tree-400.jpg 400w" type="image/jpeg">
+	<source srcset="palm-tree-1200.webp 1200w, palm-tree-800.webp 800w, palm-tree-400.webp 400w" type="image/webp">
+	<img src="palm-tree-400.jpg" alt="nice vibes"/>
 </picture>
 ```
 
@@ -32,12 +32,12 @@ yarn add cosha
 import cosha from 'cosha';
 
 cosha({
-    className: 'colorful-shadow',
-    blur: '10px',
-    brightness: '125%',
-    saturation: '110%',
-    x: '2px',
-    y: '6px'
+	className: 'colorful-shadow',
+	blur: '10px',
+	brightness: '125%',
+	saturation: '110%',
+	x: '2px',
+	y: '6px'
 });
 ```
 
@@ -46,7 +46,7 @@ Alternatively, if that module-bundler stuff isn't for you, you can get it direct
 ```html
 <script src="https://unpkg.com/cosha"></script>
 <script>
-    cosha({ className: 'colorful-shadow'});
+	cosha({ className: 'colorful-shadow' });
 </script>
 ```
 
@@ -56,18 +56,18 @@ Everything in the config is optional. You can also use it by just calling `cosha
 
 ```js
 cosha({
-    className: 'cosha',
-    blur: '5px',
-    brightness: 1,
-    saturation: 1,
-    x: 0,
-    y: 0
+	className: 'cosha',
+	blur: '5px',
+	brightness: 1,
+	saturation: 1,
+	x: 0,
+	y: 0
 });
 ```
 
 ## Gotcha
 
-It runs in every browser except Internet Explorer. This is because of missing support for [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) properties. In case cosha detects it's running in a browser that doesn't have [`NodeList.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Browser_Compatibility) available, which at this point is only IE <= 11, it simply doesn't do anything.
+It runs in every browser except Internet Explorer. This is because of missing support for [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) properties. In case cosha detects it's running in a browser that doesn't have [`NodeList.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Browser_Compatibility) available, which at this point is only IE &lt;= 11, it simply doesn't do anything.
 
 ## License
 

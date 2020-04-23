@@ -1,53 +1,53 @@
 {
-    "name": "cosha",
-    "version": "0.3.9",
-    "description": "Colorful shadows for your images",
-    "homepage": "npm.robinloeffel.ch/cosha",
-    "repository": "robinloeffel/cosha",
-    "main": "dist/cosha.cjs.js",
-    "module": "dist/cosha.esm.js",
-    "unpkg": "dist/cosha.iife.js",
-    "author": {
-        "name": "Robin Löffel",
-        "email": "hi@robinloeffel.ch",
-        "url": "robinloeffel.ch"
-    },
-    "license": "MIT",
-    "engines": {
-        "node": ">=10"
-    },
-    "devDependencies": {
-        "@rollup/plugin-buble": "^0.21.3",
-        "@rollup/plugin-commonjs": "^11.1.0",
-        "@rollup/plugin-node-resolve": "^7.1.3",
-        "eslint": "^6.8.0",
-        "eslint-config-sweet": "^0.3.0",
-        "rollup": "^2.6.1",
-        "rollup-plugin-eslint": "^7.0.0",
-        "rollup-plugin-terser": "^5.3.0",
-        "serve": "^11.3.0"
-    },
-    "files": [
-        "dist/cosha.*"
-    ],
-    "keywords": [
-        "browser",
-        "image",
-        "shadow",
-        "colors",
-        "html",
-        "css filters",
-        "dom"
-    ],
-    "scripts": {
-        "clean": "rm -rf dist/cosha.*",
-        "serve": "serve dist",
-        "build": "rollup -c",
-        "watch": "yarn build -w",
-        "start": "yarn clean && yarn watch & yarn serve",
-        "release": "yarn clean && yarn build && yarn publish"
-    },
-    "eslintConfig": {
-        "extends": "sweet"
-    }
+	"name": "cosha",
+	"version": "0.3.10",
+	"description": "Colorful shadows for your images",
+	"homepage": "npm.robinloeffel.ch/cosha",
+	"repository": "robinloeffel/cosha",
+	"main": "dist/cosha.cjs.js",
+	"module": "dist/cosha.esm.js",
+	"unpkg": "dist/cosha.iife.js",
+	"author": {
+		"name": "Robin Löffel",
+		"email": "hi@robinloeffel.ch",
+		"url": "robinloeffel.ch"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=10"
+	},
+	"devDependencies": {
+		"@rollup/plugin-buble": "^0.21.3",
+		"@rollup/plugin-commonjs": "^11.1.0",
+		"@rollup/plugin-node-resolve": "^7.1.3",
+		"eslint": "^6.8.0",
+		"eslint-config-sweet": "^0.4.2",
+		"rollup": "^2.7.2",
+		"rollup-plugin-eslint": "^7.0.0",
+		"rollup-plugin-terser": "^5.3.0",
+		"serve": "^11.3.0"
+	},
+	"files": [
+		"dist/cosha.*"
+	],
+	"keywords": [
+		"browser",
+		"image",
+		"shadow",
+		"colors",
+		"html",
+		"css filters",
+		"dom"
+	],
+	"scripts": {
+		"clean": "rm -rf dist/cosha.*",
+		"serve": "serve dist",
+		"build": "rollup -c",
+		"watch": "yarn build -w",
+		"start": "yarn clean && yarn watch & yarn serve",
+		"release": "yarn clean && yarn build && yarn publish"
+	},
+	"eslintConfig": {
+		"extends": "sweet"
+	}
 }
