@@ -44,8 +44,7 @@ const cosha = ({
       }
 
       image.parentNode.insertBefore(wrapper, image);
-      wrapper.append(image);
-      wrapper.append(clone);
+      wrapper.append(image, clone);
     });
   }
 };
