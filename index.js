@@ -43,7 +43,7 @@ const cosha = ({
         clone.querySelector('img').alt = '';
       }
 
-      image.parentNode.insertBefore(wrapper, image);
+      image.replaceWith(wrapper);
       wrapper.append(image, clone);
     });
   }
