@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="sample.jpg" width="450">
+  <img src="sample.jpg" width="600">
 </p>
 
 # cosha
@@ -41,7 +41,7 @@ cosha({
 });
 ```
 
-Alternatively, if that module-bundler stuff isn't for you, you can get it directly from [`https://unpkg.com/cosha`](https://unpkg.com/cosha).
+Alternatively, if that module bundler stuff isn't for you, you can get it directly from [`https://unpkg.com/cosha`](https://unpkg.com/cosha).
 
 ```html
 <script src="https://unpkg.com/cosha"></script>
