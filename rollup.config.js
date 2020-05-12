@@ -4,6 +4,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import { eslint } from 'rollup-plugin-eslint';
 
+const { development } = process.env;
+
 export default [{
   input: 'index.js',
   plugins: [
@@ -32,8 +34,8 @@ export default [{
   plugins: [
     resolve(),
     commonjs(),
-    buble(),
-    terser({
+    !development && buble(),
+    !development && terser({
       output: {
         comments: false
       }
@@ -42,6 +44,7 @@ export default [{
   output: {
     format: 'iife',
     name: 'cosha',
-    file: 'dist/cosha.iife.js'
+    file: 'dist/cosha.iife.js',
+    sourcemap: development
   }
 }];

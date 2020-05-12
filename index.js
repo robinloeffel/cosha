@@ -29,22 +29,16 @@ const cosha = ({
     document.head.append(styles);
 
     images.forEach(image => {
-      const isImg = image.localName === 'img';
-      const clone = image.cloneNode(!isImg);
+      const clone = image.cloneNode(true);
       const wrapper = document.createElement('div');
 
       wrapper.classList.add(`${className}-wrapper`);
       clone.classList.add(`${className}-clone`);
       clone.classList.remove(className);
 
-      if (isImg) {
-        clone.alt = '';
-      } else {
-        clone.querySelector('img').alt = '';
-      }
-
       image.replaceWith(wrapper);
       wrapper.append(image, clone);
+      wrapper.querySelectorAll('img')[1].alt = '';
     });
   }
 };
