@@ -3,13 +3,41 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import { eslint } from 'rollup-plugin-eslint';
+import livereload from 'rollup-plugin-livereload';
+import serve from 'rollup-plugin-serve';
 
-const { development } = process.env;
+const {
+  ROLLUP_WATCH: watch,
+  development
+} = process.env;
 
 export default [{
   input: 'index.js',
   plugins: [
     eslint(),
+    resolve(),
+    commonjs(),
+    !development && buble(),
+    !development && terser({
+      output: {
+        comments: false
+      }
+    }),
+    watch && serve({
+      open: true,
+      contentBase: 'dist'
+    }),
+    watch && livereload('dist')
+  ].filter(plugin => plugin),
+  output: {
+    format: 'iife',
+    name: 'cosha',
+    file: 'dist/cosha.iife.js',
+    sourcemap: development
+  }
+}, !(watch || development) && {
+  input: 'index.js',
+  plugins: [
     resolve(),
     commonjs(),
     buble()
@@ -18,7 +46,7 @@ export default [{
     format: 'esm',
     file: 'dist/cosha.esm.js'
   }
-}, {
+}, !(watch || development) && {
   input: 'index.js',
   plugins: [
     resolve(),
@@ -29,22 +57,4 @@ export default [{
     format: 'cjs',
     file: 'dist/cosha.cjs.js'
   }
-}, {
-  input: 'index.js',
-  plugins: [
-    resolve(),
-    commonjs(),
-    !development && buble(),
-    !development && terser({
-      output: {
-        comments: false
-      }
-    })
-  ],
-  output: {
-    format: 'iife',
-    name: 'cosha',
-    file: 'dist/cosha.iife.js',
-    sourcemap: development
-  }
-}];
+} ].filter(bundle => bundle);
