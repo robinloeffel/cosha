@@ -2,16 +2,14 @@ import buble from '@rollup/plugin-buble';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-import { eslint } from 'rollup-plugin-eslint';
+import eslint from 'robins-rollup-plugin-eslint';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 
-const {
-  ROLLUP_WATCH: watch,
-  development
-} = process.env;
+const watch = process.env.ROLLUP_WATCH === 'true';
+const development = process.env.development === 'true';
 
-export default [{
+const config = [{
   input: 'index.js',
   plugins: [
     eslint(),
@@ -35,26 +33,32 @@ export default [{
     file: 'dist/cosha.iife.js',
     sourcemap: development
   }
-}, !(watch || development) && {
-  input: 'index.js',
-  plugins: [
-    resolve(),
-    commonjs(),
-    buble()
-  ],
-  output: {
-    format: 'esm',
-    file: 'dist/cosha.esm.js'
-  }
-}, !(watch || development) && {
-  input: 'index.js',
-  plugins: [
-    resolve(),
-    commonjs(),
-    buble()
-  ],
-  output: {
-    format: 'cjs',
-    file: 'dist/cosha.cjs.js'
-  }
-} ].filter(bundle => bundle);
+}];
+
+if (!(watch || development)) {
+  config.push({
+    input: 'index.js',
+    plugins: [
+      resolve(),
+      commonjs(),
+      buble()
+    ],
+    output: {
+      format: 'esm',
+      file: 'dist/cosha.esm.js'
+    }
+  }, {
+    input: 'index.js',
+    plugins: [
+      resolve(),
+      commonjs(),
+      buble()
+    ],
+    output: {
+      format: 'cjs',
+      file: 'dist/cosha.cjs.js'
+    }
+  });
+}
+
+export default config;
