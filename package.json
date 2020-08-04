@@ -17,15 +17,15 @@
     "node": ">=10"
   },
   "devDependencies": {
+    "@rbnlffl/rollup-plugin-eslint": "^1.1.0",
     "@rollup/plugin-buble": "^0.21.3",
-    "@rollup/plugin-commonjs": "^12.0.0",
-    "@rollup/plugin-node-resolve": "^8.0.0",
-    "eslint": "^7.1.0",
-    "eslint-config-sweet": "^0.6.1",
-    "robins-rollup-plugin-eslint": "^0.1.0",
-    "rollup": "^2.11.2",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "eslint": "^7.6.0",
+    "eslint-config-sweet": "^1.1.0",
+    "rollup": "^2.23.0",
     "rollup-plugin-livereload": "^1.3.0",
-    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-serve": "^1.0.3",
     "rollup-plugin-terser": "^6.1.0"
   },
   "files": [

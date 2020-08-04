@@ -2,7 +2,7 @@ import buble from '@rollup/plugin-buble';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-import eslint from 'robins-rollup-plugin-eslint';
+import eslint from '@rbnlffl/rollup-plugin-eslint';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 
@@ -10,7 +10,7 @@ const watch = process.env.ROLLUP_WATCH === 'true';
 const development = process.env.development === 'true';
 
 const config = [{
-  input: 'index.js',
+  input: 'src/index.js',
   plugins: [
     eslint(),
     resolve(),
@@ -37,7 +37,7 @@ const config = [{
 
 if (!(watch || development)) {
   config.push({
-    input: 'index.js',
+    input: 'src/index.js',
     plugins: [
       resolve(),
       commonjs(),
@@ -48,7 +48,7 @@ if (!(watch || development)) {
       file: 'dist/cosha.esm.js'
     }
   }, {
-    input: 'index.js',
+    input: 'src/index.js',
     plugins: [
       resolve(),
       commonjs(),
@@ -56,7 +56,8 @@ if (!(watch || development)) {
     ],
     output: {
       format: 'cjs',
-      file: 'dist/cosha.cjs.js'
+      file: 'dist/cosha.cjs.js',
+      exports: 'default'
     }
   });
 }

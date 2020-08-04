@@ -4,15 +4,19 @@
 
 # cosha
 
-[![latest version on npm](https://img.shields.io/npm/v/cosha)](https://www.npmjs.com/package/cosha) [![npm downloads a month](https://img.shields.io/npm/dm/cosha)](https://www.npmjs.com/package/cosha) [![required node version](https://img.shields.io/node/v/cosha)](https://github.com/nodejs/Release) [![dependency status](https://img.shields.io/david/robinloeffel/cosha)](https://david-dm.org/robinloeffel/cosha) [![package license](https://img.shields.io/npm/l/cosha)](license)
+[![latest version on npm](https://img.shields.io/npm/v/cosha)](https://www.npmjs.com/package/cosha)
+[![npm downloads a month](https://img.shields.io/npm/dm/cosha)](https://www.npmjs.com/package/cosha)
+[![required node version](https://img.shields.io/node/v/cosha)](https://github.com/nodejs/Release)
+[![dependency status](https://img.shields.io/david/robinloeffel/cosha)](https://david-dm.org/robinloeffel/cosha)
+[![package license](https://img.shields.io/npm/l/cosha)](license)
 
 > Colorful shadows for your images. 🎨
 
-[cosha](https://npm.robinloeffel.ch/cosha) lets you add **co**lorful **sha**dows to your images. Try it out and look for yourself—the bundle is less than 1kb small and it really couldn't be easier to set up!
+[`cosha`](https://npm.robinloeffel.ch/cosha) lets you add **co**lorful **sha**dows to your images. Try it out and look for yourself—the bundle is less than 1kb heavy and it really couldn't be easier to set up!
 
 ## How
 
-```sh
+```bash
 yarn add cosha
 ```
 
@@ -52,18 +56,49 @@ Alternatively, if that module bundler stuff isn't for you, you can get it direct
 
 ## Config
 
-Everything in the config is optional. You can also use it by just calling `cosha()`. The default values are:
+Everything in the config is optional. You can also use it by just calling `cosha()`.
 
-```js
-cosha({
-  className: 'cosha',
-  blur: '5px',
-  brightness: 1,
-  saturation: 1,
-  x: 0,
-  y: 0
-});
-```
+### `className`
+
+Type: `string`<br>
+Default: `'cosha'`
+
+The class the plugin looks for. This should be on the original `img` or `picture` node(s).
+
+### `blur`
+
+Type: `number` or `string`<br>
+Default: `'5px'`
+
+The amount of blur to apply to the image. See the [CSS `blur` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur) on MDN for more details.
+
+### `brightness`
+
+Type: `number` or `string`<br>
+Default: `1`
+
+The amount of brightness to apply to the image. See the [CSS `brightness` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness) on MDN for more details.
+
+### `saturation`
+
+Type: `number` or `string`<br>
+Default: `1`
+
+The amount of saturation to apply to the image. See the [CSS `saturation` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturation) on MDN for more details.
+
+### `x`
+
+Type: `number` or `string`<br>
+Default: `0`
+
+The amount of horizontal translation to apply to the image. See the [CSS `translate` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate) on MDN for more details.
+
+### `y`
+
+Type: `number` or `string`<br>
+Default: `0`
+
+The amount of vertical translation to apply to the image. See the [CSS `translate` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate) on MDN for more details.
 
 ## Gotcha
 
