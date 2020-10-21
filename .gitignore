@@ -1,6 +1,6 @@
 # folders
 node_modules
-dist
+public/cosha*
 
 # macos
 .DS_Store

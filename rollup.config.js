@@ -10,34 +10,34 @@ const watch = process.env.ROLLUP_WATCH === 'true';
 const development = process.env.development === 'true';
 
 const config = [{
-  input: 'src/index.js',
+  input: 'source',
   plugins: [
     eslint(),
     resolve(),
     commonjs(),
     !development && buble(),
     !development && terser({
-      output: {
+      format: {
         comments: false
       }
     }),
     watch && serve({
       open: true,
-      contentBase: 'dist'
+      contentBase: 'public'
     }),
-    watch && livereload('dist')
+    watch && livereload('public')
   ].filter(plugin => plugin),
   output: {
     format: 'iife',
     name: 'cosha',
-    file: 'dist/cosha.iife.js',
+    file: 'public/cosha.iife.js',
     sourcemap: development
   }
 }];
 
 if (!(watch || development)) {
   config.push({
-    input: 'src/index.js',
+    input: 'source',
     plugins: [
       resolve(),
       commonjs(),
@@ -45,10 +45,10 @@ if (!(watch || development)) {
     ],
     output: {
       format: 'esm',
-      file: 'dist/cosha.esm.js'
+      file: 'public/cosha.esm.js'
     }
   }, {
-    input: 'src/index.js',
+    input: 'source',
     plugins: [
       resolve(),
       commonjs(),
@@ -56,7 +56,7 @@ if (!(watch || development)) {
     ],
     output: {
       format: 'cjs',
-      file: 'dist/cosha.cjs.js',
+      file: 'public/cosha.cjs.js',
       exports: 'default'
     }
   });

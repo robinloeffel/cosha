@@ -6,7 +6,6 @@
 
 [![latest version on npm](https://img.shields.io/npm/v/cosha)](https://www.npmjs.com/package/cosha)
 [![npm downloads a month](https://img.shields.io/npm/dm/cosha)](https://www.npmjs.com/package/cosha)
-[![required node version](https://img.shields.io/node/v/cosha)](https://github.com/nodejs/Release)
 [![dependency status](https://img.shields.io/david/robinloeffel/cosha)](https://david-dm.org/robinloeffel/cosha)
 [![package license](https://img.shields.io/npm/l/cosha)](license)
 
