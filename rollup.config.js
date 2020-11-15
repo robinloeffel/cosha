@@ -43,22 +43,16 @@ if (!(watch || development)) {
       commonjs(),
       buble()
     ],
-    output: {
+    output: [{
       format: 'esm',
-      file: 'public/cosha.esm.js'
-    }
-  }, {
-    input: 'source',
-    plugins: [
-      resolve(),
-      commonjs(),
-      buble()
-    ],
-    output: {
+      file: 'public/cosha.esm.js',
+      sourcemap: true
+    }, {
       format: 'cjs',
       file: 'public/cosha.cjs.js',
+      sourcemap: true,
       exports: 'default'
-    }
+    }]
   });
 }
 
