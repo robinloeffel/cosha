@@ -1,4 +1,3 @@
-import buble from '@rollup/plugin-buble';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
@@ -15,7 +14,6 @@ const config = [{
     eslint(),
     resolve(),
     commonjs(),
-    !development && buble(),
     !development && terser({
       format: {
         comments: false
@@ -41,7 +39,6 @@ if (!(watch || development)) {
     plugins: [
       resolve(),
       commonjs(),
-      buble()
     ],
     output: [{
       format: 'esm',
