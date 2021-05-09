@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="sample.jpg" width="600">
+  <img src="sample.webp" width="600">
 </p>
 
 # cosha
