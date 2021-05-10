@@ -101,7 +101,7 @@ The amount of vertical translation to apply to the image. See the [CSS `translat
 
 ## Gotcha
 
-It runs in every browser except Internet Explorer. This is because of missing support for [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) properties. In case cosha detects it's running in a browser that doesn't have [`NodeList.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Browser_Compatibility) available, which at this point is only IE &lt;= 11, it simply doesn't do anything.
+It runs in every browser except Internet Explorer. This is because of missing support for standard [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) functions. In case cosha detects it's running in a browser that supports [`-ms-filter`](https://docs.microsoft.com/en-us/previous-versions/ms530752(v=vs.85)), the non-standard implementation of Microsoft available only on IE, it simply doesn't do anything. And since the bundle gets passed through [`buble`](https://github.com/rollup/plugins/tree/master/packages/buble), you don't have to worry about things breaking because of `const` declarations in the source code and whatnot.
 
 ## License
 

@@ -1,6 +1,6 @@
 {
   "name": "cosha",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Colorful shadows for your images. 🎨",
   "main": "public/cosha.cjs.js",
   "module": "public/cosha.esm.js",

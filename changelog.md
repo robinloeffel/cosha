@@ -1,3 +1,9 @@
+# v1.1.1
+_2021-05-10_
+
+* run `esm` and `cjs` bundles through `buble`, too (fix breaking on ie)
+* check for `-ms-filter` instead of `NodeList.prototype.forEach` to target ie
+
 # v1.1.0
 _2020-11-12_
 

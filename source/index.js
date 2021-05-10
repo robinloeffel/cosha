@@ -6,7 +6,7 @@ const cosha = ({
   x = 0,
   y = 0
 } = {}) => {
-  if (NodeList.prototype.forEach) {
+  if (!('-ms-filter' in document.body.style)) {
     const images = document.querySelectorAll(`.${className}`);
     const styles = document.createElement('style');
 
