@@ -1,3 +1,1 @@
-module.exports = {
-  extends: 'sweet'
-};
+module.exports = { extends: 'sweet' };

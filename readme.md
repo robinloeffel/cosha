@@ -6,12 +6,11 @@
 
 [![latest version on npm](https://img.shields.io/npm/v/cosha)](https://www.npmjs.com/package/cosha)
 [![npm downloads a month](https://img.shields.io/npm/dm/cosha)](https://www.npmjs.com/package/cosha)
-[![dependency status](https://img.shields.io/david/robinloeffel/cosha)](https://david-dm.org/robinloeffel/cosha)
 [![package license](https://img.shields.io/npm/l/cosha)](license)
 
 > Colorful shadows for your images. 🎨
 
-[`cosha`](https://npm.robinloeffel.ch/cosha) lets you add **co**lorful **sha**dows to your images. Try it out and look for yourself—the bundle is less than 1kb heavy and it really couldn't be easier to set up!
+[`cosha`](https://npm.robinloeffel.ch/cosha) lets you add **co**lorful **sha**dows to your images. Try it out and look for yourself—it really couldn't be easier to set up!
 
 ## How
 
@@ -34,8 +33,7 @@ yarn add cosha
 ```js
 import cosha from 'cosha';
 
-cosha({
-  className: 'colorful-shadow',
+cosha('colorful-shadow', {
   blur: '10px',
   brightness: '125%',
   saturation: '110%',
@@ -49,13 +47,17 @@ Alternatively, if that module bundler stuff isn't for you, you can get it direct
 ```html
 <script src="https://unpkg.com/cosha"></script>
 <script>
-  cosha({ className: 'colorful-shadow' });
+  cosha('colorful-shadow');
 </script>
 ```
 
 ## Config
 
 Everything in the config is optional. You can also use it by just calling `cosha()`.
+
+```js
+cosha(className, { options });
+```
 
 ### `className`
 
@@ -64,35 +66,35 @@ Default: `'cosha'`
 
 The class the plugin looks for. This should be on the original `img` or `picture` node(s).
 
-### `blur`
+### `options.blur`
 
 Type: `number` or `string`<br>
 Default: `'5px'`
 
 The amount of blur to apply to the image. See the [CSS `blur` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur) on MDN for more details.
 
-### `brightness`
+### `options.brightness`
 
 Type: `number` or `string`<br>
 Default: `1`
 
 The amount of brightness to apply to the image. See the [CSS `brightness` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness) on MDN for more details.
 
-### `saturation`
+### `options.saturation`
 
 Type: `number` or `string`<br>
 Default: `1`
 
 The amount of saturation to apply to the image. See the [CSS `saturation` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturation) on MDN for more details.
 
-### `x`
+### `options.x`
 
 Type: `number` or `string`<br>
 Default: `0`
 
 The amount of horizontal translation to apply to the image. See the [CSS `translate` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate) on MDN for more details.
 
-### `y`
+### `options.y`
 
 Type: `number` or `string`<br>
 Default: `0`
@@ -101,7 +103,7 @@ The amount of vertical translation to apply to the image. See the [CSS `translat
 
 ## Gotcha
 
-It runs in every browser except Internet Explorer. This is because of missing support for standard [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) functions. In case cosha detects it's running in a browser that supports [`-ms-filter`](https://docs.microsoft.com/en-us/previous-versions/ms530752(v=vs.85)), the non-standard implementation of Microsoft available only on IE, it simply doesn't do anything. And since the bundle gets passed through [`buble`](https://github.com/rollup/plugins/tree/master/packages/buble), you don't have to worry about things breaking because of `const` declarations in the source code and whatnot.
+It runs in every browser except Internet Explorer. This is because of missing support for standard [CSS `filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility) functions.
 
 ## License
 

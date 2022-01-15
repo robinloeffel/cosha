@@ -1,3 +1,10 @@
+# v2.0.0
+_2022-01-15_
+
+* drop ie
+* clean up injected css
+* simplify api
+
 # v1.1.1
 _2021-05-10_
 

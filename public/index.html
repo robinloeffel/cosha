@@ -9,48 +9,43 @@
 	<meta name="author" content="Robin Löffel">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="index, follow">
-  <title>cosha: Colorful shadows for your images</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+  <title>cosha: colorful shadows for your images</title>
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
 		body {
-			font-family: 'Inter', sans-serif;
-			font-size: 125%;
+			font-family: system-ui;
+			font-size: 120%;
 			line-height: 1.6;
 			color: #222;
 			background-color: #eee;
-      margin: 0;
-      padding: 0;
+      text-align: center;
 		}
 
 		header {
 			background-color: #222;
 			padding: 125px 10px;
 			color: #eee;
-			text-align: center;
 		}
 
-		header * {
+		header > * {
 			margin: auto;
-			color: inherit;
+      max-width: 640px;
 		}
 
 		section {
-			display: flex;
-			justify-content: center;
-			align-items: center;
 			margin: 15vh auto;
 			max-width: 800px;
 			width: 90%;
 		}
 
 		footer {
-			text-align: center;
-			margin: 50px 0 75px;
-			font-size: 90%;
+			margin-block: 50px 75px;
+			font-size: smaller;
 		}
 
     img {
@@ -58,16 +53,14 @@
       max-width: 100%;
     }
 
-		h1,
-		p {
-			max-width: 640px;
-		}
-
 		h1 {
 			line-height: 1.1;
 			font-size: 300%;
 			margin-bottom: 30px;
-			color: #eee;
+      background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: hue 5s infinite alternate linear;
 		}
 
 		a {
@@ -78,18 +71,10 @@
 			margin-top: 20px;
 		}
 
-		@supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {
-			h1 {
-				background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
-				-webkit-text-fill-color: transparent;
-				-webkit-background-clip: text;
-				animation: hue 5s infinite alternate linear;
-			}
-		}
-
 		pre {
-			font-family: inherit;
-			margin: 0;
+			font-family: monospace;
+      text-align: initial;
+			margin: auto;
 			width: 80%;
 			max-width: 640px;
 			white-space: normal;
@@ -135,7 +120,7 @@
 	<main>
 		<section>
 			<pre>
-				<span>🔥 yarn add cosha</span>
+				<span>$ yarn add cosha</span>
 				<span>&nbsp;</span>
 				<span><span style="color: goldenrod;">import</span> <span style="color: skyblue;">cosha</span> <span style="color: goldenrod;">from</span> <span style="color: deepskyblue;">'cosha'</span>;</span>
 				<span><span style="color: skyblue;">cosha()</span>;</span>
@@ -158,21 +143,11 @@
 		<a href="https://robinloeffel.ch">robinloeffel.ch</a>
 	</footer>
 
-	<script type="module">
-    import cosha from './cosha.esm.js';
-
+  <script src="cosha.iife.js"></script>
+	<script>
 		cosha();
-
-		cosha({
-			className: 'large-shadow',
-			blur: '15px',
-			y: '5px'
-		});
-
-		cosha({
-			className: 'light-shadow',
-			brightness: 1.1
-		});
+		cosha('large-shadow', { blur: '15px', y: '5px' });
+		cosha('light-shadow', { brightness: 1.1 });
 	</script>
 </body>
 

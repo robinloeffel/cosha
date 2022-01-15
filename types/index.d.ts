@@ -1,11 +1,5 @@
 interface CoshaOptions {
   /**
-   * @description The class the plugin looks for. This should be on the original `img` or `picture` node(s).
-   * @default 'cosha'
-   */
-  className?: string,
-
-  /**
    * @description The amount of blur to apply to the image. See the CSS `blur` function docs on MDN for more details.
    * @default '5px'
    */
@@ -21,7 +15,7 @@ interface CoshaOptions {
    * @description The amount of saturation to apply to the image. See the CSS `saturation` function docs on MDN for more details.
    * @default 1
    */
-  saturation?: number | string,
+  saturation?: number | string,
 
   /**
    * @description The amount of horizontal translation to apply to the image. See the CSS `translate` function docs on MDN for more details.
@@ -29,11 +23,11 @@ interface CoshaOptions {
    */
   x?: number | string,
 
-    /**
+  /**
    * @description The amount of vertical translation to apply to the image. See the CSS `translate` function docs on MDN for more details.
    * @default 0
    */
   y?: number | string
 }
 
-export default function cosha(options?: CoshaOptions): undefined;
+export default function cosha(className?: string, options?: CoshaOptions): undefined;
