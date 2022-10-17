@@ -1,3 +1,10 @@
+# v2.0.2
+_2022-10-17_
+
+* fix paths in package.json
+* don't minify browser bundle
+* always ship source maps
+
 # v2.0.1
 _2022-10-17_
 

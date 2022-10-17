@@ -1,6 +1,5 @@
 import eslint from '@rbnlffl/rollup-plugin-eslint';
 import typescript from '@rollup/plugin-typescript';
-import { terser } from 'rollup-plugin-terser';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 
@@ -21,14 +20,11 @@ export default {
 	output: [{
 		format: 'esm',
 		file: 'dist/cosha.mjs',
-		sourcemap: development
+		sourcemap: true
 	}, {
 		format: 'iife',
 		file: 'dist/cosha.js',
 		name: 'cosha',
-		sourcemap: development,
-		plugins: [
-			!development && terser()
-		]
+		sourcemap: true
 	}]
 };

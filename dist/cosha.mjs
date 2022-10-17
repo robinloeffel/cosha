@@ -1,22 +1,20 @@
-
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var index = (className = 'cosha', { blur = '5px', brightness = 1, saturation = 1, x = 0, y = 0 } = {}) => {
     const images = document.querySelectorAll(`.${className}`);
     const styles = document.createElement('style');
     styles.textContent = `
-    .${className}-wrapper {
-      position: relative;
-      display: grid;
-      place-content: center;
-    }
+		.${className}-wrapper {
+			position: relative;
+			display: grid;
+			place-content: center;
+		}
 
-    .${className}-clone {
-      position: absolute;
-      z-index: -1;
-      translate: ${x} ${y} 0;
-      filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
-    }
-  `;
+		.${className}-clone {
+			position: absolute;
+			z-index: -1;
+			translate: ${x} ${y} 0;
+			filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
+		}
+	`;
     document.head.append(styles);
     images.forEach(original => {
         const cloned = original.cloneNode(true);

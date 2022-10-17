@@ -1,6 +1,7 @@
 # folders
 node_modules
-public/cosha*
+dist/cosha.*
+dist/index.d.ts
 
 # macos
 .DS_Store
