@@ -1,3 +1,9 @@
+# v2.0.3
+_2022-10-17_
+
+* use the `browser` and `unpkg` fields
+* minimize `unpkg` bundle, but don't shit source maps
+
 # v2.0.2
 _2022-10-17_
 

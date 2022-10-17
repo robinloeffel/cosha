@@ -1,5 +1,6 @@
 import eslint from '@rbnlffl/rollup-plugin-eslint';
 import typescript from '@rollup/plugin-typescript';
+import { terser } from 'rollup-plugin-terser';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 
@@ -25,6 +26,11 @@ export default {
 		format: 'iife',
 		file: 'dist/cosha.js',
 		name: 'cosha',
-		sourcemap: true
+		sourcemap: development,
+		plugins: [
+			terser({
+				format: { comments: false }
+			})
+		]
 	}]
 };

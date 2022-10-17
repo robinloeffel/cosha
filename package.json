@@ -1,9 +1,9 @@
 {
 	"name": "cosha",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "Colorful shadows for your images. 🎨",
-	"main": "dist/cosha.mjs",
-	"browser": "dist/cosha.js",
+	"browser": "dist/cosha.mjs",
+	"unpkg": "dist/cosha.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
 	"homepage": "https://npm.robinloeffel.ch/cosha",
@@ -30,6 +30,7 @@
 		"rollup": "^3.2.2",
 		"rollup-plugin-livereload": "^2.0.5",
 		"rollup-plugin-serve": "^2.0.1",
+		"rollup-plugin-terser": "^7.0.2",
 		"tslib": "^2.4.0",
 		"typescript": "^4.8.4"
 	},
@@ -38,7 +39,7 @@
 		"dist"
 	],
 	"scripts": {
-		"clean": "rm -rf dist/cosha* dist/index.d.ts",
+		"clean": "rm -rf dist/cosha.* dist/index.d.ts",
 		"run:dev": "rollup -c -w --environment development",
 		"run:prod": "rollup -c -w",
 		"dist": "yarn clean && rollup -c",
