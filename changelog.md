@@ -1,3 +1,9 @@
+# v2.0.1
+_2022-10-17_
+
+* move to ts
+* refer to generated typing
+
 # v2.0.0
 _2022-01-15_
 
