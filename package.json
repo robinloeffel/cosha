@@ -22,12 +22,13 @@
 	],
 	"devDependencies": {
 		"@rbnlffl/rollup-plugin-eslint": "^4.0.0",
-		"@rollup/plugin-typescript": "^9.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.40.0",
-		"@typescript-eslint/parser": "^5.40.0",
-		"eslint": "^8.25.0",
+		"@rollup/plugin-typescript": "^9.0.2",
+		"@typescript-eslint/eslint-plugin": "^5.41.0",
+		"@typescript-eslint/parser": "^5.41.0",
+		"eslint": "^8.26.0",
 		"eslint-config-sweet": "^9.0.1",
-		"rollup": "^3.2.2",
+		"gh-pages": "^4.0.0",
+		"rollup": "^3.2.3",
 		"rollup-plugin-livereload": "^2.0.5",
 		"rollup-plugin-serve": "^2.0.1",
 		"rollup-plugin-terser": "^7.0.2",
@@ -39,11 +40,12 @@
 		"dist"
 	],
 	"scripts": {
-		"clean": "rm -rf dist/cosha.* dist/index.d.ts",
-		"run:dev": "rollup -c -w --environment development",
-		"run:prod": "rollup -c -w",
+		"clean": "rm -rf dist && mkdir dist",
+		"run:dev": "yarn html && rollup -c -w --environment development",
+		"run:prod": "yarn html && rollup -c -w",
+		"html": "cp demo/index.html dist/index.html",
 		"dist": "yarn clean && rollup -c",
 		"start": "yarn clean && yarn run:dev",
-		"prepare": "yarn dist"
+		"prepare": "yarn dist && cp dist/cosha.js demo/cosha.js && gh-pages -d demo"
 	}
 }

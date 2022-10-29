@@ -11,7 +11,7 @@ export default (className = 'cosha', {
 	x?: number | string,
 	y?: number | string
 } = {}) => {
-	const images = document.querySelectorAll(`.${className}`);
+	const images = document.querySelectorAll(`.${className}`) as NodeListOf<HTMLImageElement | HTMLPictureElement>;
 	const styles = document.createElement('style');
 
 	styles.textContent = `
