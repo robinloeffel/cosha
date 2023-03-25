@@ -146,11 +146,12 @@
 		<footer>
 			<a href="https://robinloeffel.ch">robinloeffel.ch</a>
 		</footer>
-		<script type="module" src="cosha.js"></script>
-		<script>
+		<script type="module">
+      import cosha from "https://unpkg.com/cosha";
+
 			cosha();
-			cosha({ className: 'large-shadow', blur: '15px', y: '5px' });
-			cosha({ className: 'light-shadow', brightness: 1.1 });
+			cosha({ className: "large-shadow", blur: "15px", y: "5px" });
+			cosha({ className: "light-shadow", brightness: 1.1 });
 		</script>
 	</body>
 </html>
