@@ -2,7 +2,6 @@ import eslint from "@rbnlffl/rollup-plugin-eslint";
 import typescript from "@rollup/plugin-typescript";
 import livereload from "rollup-plugin-livereload";
 import serve from "rollup-plugin-serve";
-import copy from "rollup-plugin-copy";
 
 const watch = process.env.ROLLUP_WATCH === "true";
 

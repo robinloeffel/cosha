@@ -1,6 +1,6 @@
 {
 	"name": "cosha",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Colorful shadows for your images. 🎨",
 	"main": "dist/cosha.js",
 	"types": "dist/index.d.ts",
@@ -43,6 +43,6 @@
 		"build": "yarn clean && rollup -c",
 		"dist": "yarn build",
 		"start": "yarn build -w",
-		"prepublish": "gh-pages -d demo"
+		"prepublish": "yarn dist && gh-pages -d demo"
 	}
 }

@@ -1,3 +1,8 @@
+# v3.0.1
+_2023-03-25_
+
+* re-publish without `livereload` in source code
+
 # v3.0.0
 _2023-03-25_
 
