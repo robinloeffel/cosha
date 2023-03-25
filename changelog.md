@@ -1,3 +1,9 @@
+# v3.0.0
+_2023-03-25_
+
+* drop `unpkg`/`iife` bundle, only emit `esm`
+* have everything in the `options` object (incl. `className`)
+
 # v2.0.3
 _2022-10-17_
 

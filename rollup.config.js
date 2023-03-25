@@ -1,36 +1,26 @@
-import eslint from '@rbnlffl/rollup-plugin-eslint';
-import typescript from '@rollup/plugin-typescript';
-import { terser } from 'rollup-plugin-terser';
-import livereload from 'rollup-plugin-livereload';
-import serve from 'rollup-plugin-serve';
+import eslint from "@rbnlffl/rollup-plugin-eslint";
+import typescript from "@rollup/plugin-typescript";
+import livereload from "rollup-plugin-livereload";
+import serve from "rollup-plugin-serve";
+import copy from "rollup-plugin-copy";
 
-const watch = process.env.ROLLUP_WATCH === 'true';
-const development = process.env.development === 'true';
+const watch = process.env.ROLLUP_WATCH === "true";
 
+/** @type {import("rollup").RollupOptions} */
 export default {
-	input: 'src/index.ts',
+	input: "source/index.ts",
 	plugins: [
-		development && eslint(),
+		eslint(),
 		typescript(),
 		watch && serve({
 			open: true,
-			contentBase: 'dist'
+			contentBase: "demo"
 		}),
-		watch && livereload('dist')
-	],
+		watch && livereload("demo")
+	].filter(Boolean),
 	output: [{
-		format: 'esm',
-		file: 'dist/cosha.mjs',
+		format: "esm",
+		file: "dist/cosha.js",
 		sourcemap: true
-	}, {
-		format: 'iife',
-		file: 'dist/cosha.js',
-		name: 'cosha',
-		sourcemap: development,
-		plugins: [
-			terser({
-				format: { comments: false }
-			})
-		]
 	}]
 };

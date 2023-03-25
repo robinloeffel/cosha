@@ -1,9 +1,9 @@
 {
-	"include": ["src"],
-	"exclude": ["node_modules", "dist"],
+	"include": ["source"],
+	"exclude": ["node_modules"],
 	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
+		"target": "es2022",
+		"module": "es2022",
 		"declaration": true,
 		"outDir": "dist"
 	}

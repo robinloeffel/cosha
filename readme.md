@@ -31,23 +31,25 @@ yarn add cosha
 ```
 
 ```js
-import cosha from 'cosha';
+import cosha from "cosha";
 
-cosha('colorful-shadow', {
-  blur: '10px',
-  brightness: '125%',
-  saturation: '110%',
-  x: '2px',
-  y: '6px'
+cosha({
+  className: "colorful-shadow",
+  blur: "10px",
+  brightness: "125%",
+  saturation: "110%",
+  x: "2px",
+  y: "6px"
 });
 ```
 
 Alternatively, if that module bundler stuff isn't for you, you can get it directly from [`https://unpkg.com/cosha`](https://unpkg.com/cosha).
 
 ```html
-<script src="https://unpkg.com/cosha"></script>
-<script>
-  cosha('colorful-shadow');
+<script type="module">
+  import cosha from "https://unpkg.com/cosha";
+
+  cosha();
 </script>
 ```
 
@@ -56,47 +58,47 @@ Alternatively, if that module bundler stuff isn't for you, you can get it direct
 Everything in the config is optional. You can also use it by just calling `cosha()`.
 
 ```js
-cosha(className, { options });
+cosha(options);
 ```
 
-### `className`
+### `options.className`
 
 Type: `string`<br>
-Default: `'cosha'`
+Default: `"cosha"`
 
 The class the plugin looks for. This should be on the original `img` or `picture` node(s).
 
 ### `options.blur`
 
-Type: `number` or `string`<br>
-Default: `'5px'`
+Type: `number | string`<br>
+Default: `"5px"`
 
 The amount of blur to apply to the image. See the [CSS `blur` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur) on MDN for more details.
 
 ### `options.brightness`
 
-Type: `number` or `string`<br>
+Type: `number | string`<br>
 Default: `1`
 
 The amount of brightness to apply to the image. See the [CSS `brightness` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness) on MDN for more details.
 
 ### `options.saturation`
 
-Type: `number` or `string`<br>
+Type: `number | string`<br>
 Default: `1`
 
 The amount of saturation to apply to the image. See the [CSS `saturation` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturation) on MDN for more details.
 
 ### `options.x`
 
-Type: `number` or `string`<br>
+Type: `number | string`<br>
 Default: `0`
 
 The amount of horizontal translation to apply to the image. See the [CSS `translate` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate) on MDN for more details.
 
 ### `options.y`
 
-Type: `number` or `string`<br>
+Type: `number | string`<br>
 Default: `0`
 
 The amount of vertical translation to apply to the image. See the [CSS `translate` function docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate) on MDN for more details.

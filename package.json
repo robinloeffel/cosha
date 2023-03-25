@@ -1,12 +1,11 @@
 {
 	"name": "cosha",
-	"version": "2.0.3",
+	"version": "3.0.0",
 	"description": "Colorful shadows for your images. 🎨",
-	"browser": "dist/cosha.mjs",
-	"unpkg": "dist/cosha.js",
+	"main": "dist/cosha.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
-	"homepage": "https://npm.robinloeffel.ch/cosha",
+	"homepage": "https://robinloeffel.github.io/cosha",
 	"repository": "https://github.com/robinloeffel/cosha.git",
 	"bugs": "https://github.com/robinloeffel/cosha/issues",
 	"author": "Robin Löffel (https://robinloeffel.ch) <hi@robinloeffel.ch>",
@@ -21,31 +20,29 @@
 		"dom"
 	],
 	"devDependencies": {
-		"@rbnlffl/rollup-plugin-eslint": "^4.0.0",
-		"@rollup/plugin-typescript": "^9.0.2",
-		"@typescript-eslint/eslint-plugin": "^5.41.0",
-		"@typescript-eslint/parser": "^5.41.0",
-		"eslint": "^8.26.0",
-		"eslint-config-sweet": "^9.0.1",
-		"gh-pages": "^4.0.0",
-		"rollup": "^3.2.3",
+		"@commitlint/cli": "^17.5.0",
+		"@commitlint/config-conventional": "^17.4.4",
+		"@rbnlffl/rollup-plugin-eslint": "^5.0.0",
+		"@rollup/plugin-typescript": "^11.0.0",
+		"eslint": "^8.36.0",
+		"eslint-config-sweet": "^11.0.2",
+		"gh-pages": "^5.0.0",
+		"husky": "^8.0.3",
+		"rollup": "^3.20.2",
 		"rollup-plugin-livereload": "^2.0.5",
-		"rollup-plugin-serve": "^2.0.1",
-		"rollup-plugin-terser": "^7.0.2",
-		"tslib": "^2.4.0",
-		"typescript": "^4.8.4"
+		"rollup-plugin-serve": "^2.0.2",
+		"tslib": "^2.5.0",
+		"typescript": "^5.0.2"
 	},
 	"files": [
-		"src",
+		"source",
 		"dist"
 	],
 	"scripts": {
-		"clean": "rm -rf dist && mkdir dist",
-		"run:dev": "yarn html && rollup -c -w --environment development",
-		"run:prod": "yarn html && rollup -c -w",
-		"html": "cp demo/index.html dist/index.html",
-		"dist": "yarn clean && rollup -c",
-		"start": "yarn clean && yarn run:dev",
-		"prepare": "yarn dist && cp dist/cosha.js demo/cosha.js && gh-pages -d demo"
+		"clean": "rm -rf dist",
+		"build": "yarn clean && rollup -c",
+		"dist": "yarn build",
+		"start": "yarn build -w",
+		"prepublish": "gh-pages -d demo"
 	}
 }
