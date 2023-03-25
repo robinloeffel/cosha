@@ -1,1 +1,32 @@
-var cosha=function(){"use strict";return(t="cosha",{blur:e="5px",brightness:n=1,saturation:a=1,x:r=0,y:o=0}={})=>{const s=document.querySelectorAll(`.${t}`),c=document.createElement("style");c.textContent=`\n\t\t.${t}-wrapper {\n\t\t\tposition: relative;\n\t\t\tdisplay: grid;\n\t\t\tplace-content: center;\n\t\t}\n\n\t\t.${t}-clone {\n\t\t\tposition: absolute;\n\t\t\tz-index: -1;\n\t\t\ttranslate: ${r} ${o} 0;\n\t\t\tfilter: blur(${e}) brightness(${n}) saturate(${a});\n\t\t}\n\t`,document.head.append(c),s.forEach((e=>{const n=e.cloneNode(!0),a=document.createElement("div");n.classList.remove(t),n.classList.add(`${t}-clone`),a.classList.add(`${t}-wrapper`),a.append(e.cloneNode(!0),n),a.querySelectorAll("img")[1].alt="",e.replaceWith(a)}))}}();
+var index = ({ className = "cosha", blur = "5px", brightness = 1, saturation = 1, x = 0, y = 0 } = {}) => {
+    const images = document.querySelectorAll(`.${className}`);
+    const styles = document.createElement("style");
+    styles.textContent = `
+    .${className}-wrapper {
+      position: relative;
+      display: grid;
+      place-content: center;
+    }
+
+    .${className}-clone {
+      position: absolute;
+      z-index: -1;
+      translate: ${x} ${y} 0;
+      filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
+    }
+  `;
+    document.head.append(styles);
+    for (const original of images) {
+        const cloned = original.cloneNode(true);
+        const wrapper = document.createElement("div");
+        cloned.classList.remove(className);
+        cloned.classList.add(`${className}-clone`);
+        wrapper.classList.add(`${className}-wrapper`);
+        wrapper.append(original.cloneNode(true), cloned);
+        wrapper.querySelectorAll("img")[1].alt = "";
+        original.replaceWith(wrapper);
+    }
+};
+
+export { index as default };
+//# sourceMappingURL=cosha.js.map
