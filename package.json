@@ -22,6 +22,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^17.5.0",
 		"@commitlint/config-conventional": "^17.4.4",
+		"@rbnlffl/rollup-plugin-browser-sync": "^0.0.3",
 		"@rbnlffl/rollup-plugin-eslint": "^5.0.0",
 		"@rollup/plugin-typescript": "^11.0.0",
 		"eslint": "^8.36.0",
@@ -29,8 +30,6 @@
 		"gh-pages": "^5.0.0",
 		"husky": "^8.0.3",
 		"rollup": "^3.20.2",
-		"rollup-plugin-livereload": "^2.0.5",
-		"rollup-plugin-serve": "^2.0.2",
 		"tslib": "^2.5.0",
 		"typescript": "^5.0.2"
 	},
@@ -43,6 +42,6 @@
 		"build": "yarn clean && rollup -c",
 		"dist": "yarn build",
 		"start": "yarn build -w",
-		"prepublish": "yarn dist && gh-pages -d demo"
+		"prepublishOnly": "yarn dist && gh-pages -d demo"
 	}
 }

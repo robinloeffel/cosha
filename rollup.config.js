@@ -1,9 +1,6 @@
 import eslint from "@rbnlffl/rollup-plugin-eslint";
+import browserSync from "@rbnlffl/rollup-plugin-browser-sync";
 import typescript from "@rollup/plugin-typescript";
-import livereload from "rollup-plugin-livereload";
-import serve from "rollup-plugin-serve";
-
-const watch = process.env.ROLLUP_WATCH === "true";
 
 /** @type {import("rollup").RollupOptions} */
 export default {
@@ -11,11 +8,11 @@ export default {
 	plugins: [
 		eslint(),
 		typescript(),
-		watch && serve({
-			open: true,
-			contentBase: "demo"
-		}),
-		watch && livereload("demo")
+		browserSync({
+      ui: false,
+      notify: false,
+      server: "demo"
+    })
 	].filter(Boolean),
 	output: [{
 		format: "esm",
