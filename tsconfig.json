@@ -1,10 +1,16 @@
 {
-	"include": ["source"],
-	"exclude": ["node_modules"],
 	"compilerOptions": {
-		"target": "es2022",
-		"module": "es2022",
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"lib": ["esnext", "dom", "dom.iterable"],
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"skipLibCheck": true,
+		"verbatimModuleSyntax": true,
+		"moduleDetection": "force",
 		"declaration": true,
 		"outDir": "dist"
-	}
+	},
+	"include": ["src"]
 }

@@ -1,3 +1,8 @@
+# v3.0.2
+_2023-12-10_
+
+* re-publish as compiled directly by `tsc`
+
 # v3.0.1
 _2023-03-25_
 

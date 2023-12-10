@@ -1,14 +1,12 @@
 {
 	"name": "cosha",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "Colorful shadows for your images. 🎨",
-	"main": "dist/cosha.js",
-	"types": "dist/index.d.ts",
 	"type": "module",
-	"homepage": "https://robinloeffel.github.io/cosha",
-	"repository": "https://github.com/robinloeffel/cosha.git",
-	"bugs": "https://github.com/robinloeffel/cosha/issues",
-	"author": "Robin Löffel (https://robinloeffel.ch) <hi@robinloeffel.ch>",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"homepage": "https://github.com/robinloeffel/cosha",
+	"author": "Robin Löffel",
 	"license": "MIT",
 	"keywords": [
 		"browser",
@@ -19,29 +17,20 @@
 		"css filters",
 		"dom"
 	],
-	"devDependencies": {
-		"@commitlint/cli": "^17.5.0",
-		"@commitlint/config-conventional": "^17.4.4",
-		"@rbnlffl/rollup-plugin-browser-sync": "^0.0.3",
-		"@rbnlffl/rollup-plugin-eslint": "^5.0.0",
-		"@rollup/plugin-typescript": "^11.0.0",
-		"eslint": "^8.36.0",
-		"eslint-config-sweet": "^11.0.2",
-		"gh-pages": "^5.0.0",
-		"husky": "^8.0.3",
-		"rollup": "^3.20.2",
-		"tslib": "^2.5.0",
-		"typescript": "^5.0.2"
-	},
 	"files": [
-		"source",
 		"dist"
 	],
+	"devDependencies": {
+		"browser-sync": "^2.29.3",
+		"concurrently": "^8.2.2",
+		"eslint": "^8.55.0",
+		"eslint-config-sweet": "^18.0.0",
+		"gh-pages": "^6.1.0",
+		"typescript": "^5.3.3"
+	},
 	"scripts": {
-		"clean": "rm -rf dist",
-		"build": "yarn clean && rollup -c",
-		"dist": "yarn build",
-		"start": "yarn build -w",
-		"prepublishOnly": "yarn dist && gh-pages -d demo"
+		"start": "concurrently 'tsc -w' 'browser-sync dist -w' -n 'typescript,browser-sync'",
+		"prepublishOnly": "rm -rf dist && tsc",
+		"postpublish": "gh-pages -d dist -s '*.{html,js}'"
 	}
 }

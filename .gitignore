@@ -1,10 +1,6 @@
 # folders
 node_modules
 dist
-demo
 
 # macos
 .DS_Store
-.AppleDouble
-.LSOverride
-._*

@@ -4,9 +4,11 @@
 
 # cosha
 
-[![latest version on npm](https://img.shields.io/npm/v/cosha)](https://www.npmjs.com/package/cosha)
-[![npm downloads a month](https://img.shields.io/npm/dm/cosha)](https://www.npmjs.com/package/cosha)
-[![package license](https://img.shields.io/npm/l/cosha)](license)
+[![version on npm](https://badgen.net/npm/v/cosha)](https://www.npmjs.com/package/cosha)
+[![weekly downloads on npm](https://badgen.net/npm/dw/cosha)](https://www.npmjs.com/package/cosha)
+[![types](https://badgen.net/npm/types/cosha)](https://www.npmjs.com/package/cosha)
+[![minified size](https://badgen.net/bundlephobia/minzip/cosha)](https://bundlephobia.com/package/cosha)
+[![license](https://badgen.net/npm/license/cosha)](https://github.com/robinloeffel/cosha/blob/main/license.txt)
 
 > Colorful shadows for your images. 🎨
 
@@ -15,7 +17,7 @@
 ## How
 
 ```bash
-yarn add cosha
+npm i cosha
 ```
 
 ```html
